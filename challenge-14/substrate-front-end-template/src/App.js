@@ -12,9 +12,9 @@ import Events from './Events';
 import Interactor from './Interactor';
 import Metadata from './Metadata';
 import NodeInfo from './NodeInfo';
-import TemplateModule from './TemplateModule';
 import Transfer from './Transfer';
 import Upgrade from './Upgrade';
+import MultiSig from './MultiSig';
 
 function Main () {
   const [accountAddress, setAccountAddress] = useState(null);
@@ -73,7 +73,7 @@ function Main () {
             <Events />
           </Grid.Row>
           <Grid.Row>
-            <TemplateModule accountPair={accountPair} />
+            <MultiSig accountPair={accountPair} />
           </Grid.Row>
         </Grid>
       </Container>

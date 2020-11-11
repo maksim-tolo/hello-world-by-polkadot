@@ -74,10 +74,14 @@ decl_module! {
 		fn deposit_event() = default;
 
 		#[weight = 10_000 + T::DbWeight::get().writes(1)]
-        pub fn update_my_struct(origin, myStruct: MyCustomStruct) -> dispatch::DispatchResult {
+        pub fn update_my_struct(origin, my_string: Vec<u8>, my_number: u32) -> dispatch::DispatchResult {
             let who = ensure_signed(origin)?;
-            MyStruct::put(myStruct.clone());
-            Self::deposit_event(RawEvent::MyStructStored(myStruct, who));
+            let my_struct = MyCustomStruct{
+                my_string,
+                my_number,
+            };
+            MyStruct::put(my_struct.clone());
+            Self::deposit_event(RawEvent::MyStructStored(my_struct, who));
             Ok(())
         }
 

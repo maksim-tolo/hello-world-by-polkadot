@@ -6,12 +6,20 @@
 
 use frame_support::{decl_module, decl_storage, decl_event, decl_error, dispatch, traits::Get};
 use frame_system::ensure_signed;
+use sp_std::prelude::*;
+use frame_support::codec::{Encode, Decode};
 
 #[cfg(test)]
 mod mock;
 
 #[cfg(test)]
 mod tests;
+
+#[derive(Encode, Decode, Default, Clone, PartialEq, Debug, Eq)]
+pub struct MyCustomStruct {
+    my_string: Vec<u8>,
+    my_number: u32,
+}
 
 /// Configure the pallet by specifying the parameters and types on which it depends.
 pub trait Trait: frame_system::Trait {
@@ -29,6 +37,7 @@ decl_storage! {
 		// Learn more about declaring storage items:
 		// https://substrate.dev/docs/en/knowledgebase/runtime/storage#declaring-storage-items
 		Something get(fn something): Option<u32>;
+		MyStruct get(fn get_my_struct): MyCustomStruct;
 	}
 }
 
@@ -39,6 +48,7 @@ decl_event!(
 		/// Event documentation should end with an array that provides descriptive names for event
 		/// parameters. [something, who]
 		SomethingStored(u32, AccountId),
+		MyStructStored(MyCustomStruct, AccountId),
 	}
 );
 
@@ -62,6 +72,14 @@ decl_module! {
 
 		// Events must be initialized if they are used by the pallet.
 		fn deposit_event() = default;
+
+		#[weight = 10_000 + T::DbWeight::get().writes(1)]
+        pub fn update_my_struct(origin, myStruct: MyCustomStruct) -> dispatch::DispatchResult {
+            let who = ensure_signed(origin)?;
+            MyStruct::put(myStruct.clone());
+            Self::deposit_event(RawEvent::MyStructStored(myStruct, who));
+            Ok(())
+        }
 
 		/// An example dispatchable that takes a singles value as a parameter, writes the value to
 		/// storage and emits an event. This function must be dispatched by a signed extrinsic.

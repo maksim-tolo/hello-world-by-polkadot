@@ -1,7 +1,7 @@
 use sp_core::{Pair, Public, sr25519};
 use node_template_runtime::{
 	AccountId, AuraConfig, BalancesConfig, GenesisConfig, GrandpaConfig,
-	SudoConfig, SystemConfig, WASM_BINARY, Signature
+	SudoConfig, SystemConfig, WASM_BINARY, Signature, TokensConfig, CurrencyId
 };
 use sp_consensus_aura::sr25519::AuthorityId as AuraId;
 use sp_finality_grandpa::AuthorityId as GrandpaId;
@@ -153,5 +153,17 @@ fn testnet_genesis(
 			// Assign network admin rights.
 			key: root_key,
 		}),
+		orml_tokens: Some(TokensConfig {
+            endowed_accounts: endowed_accounts
+            .iter()
+            .flat_map(|x| {
+                vec![
+                    (x.clone(), CurrencyId::DOT, 10_000_000_000_000_000),
+                    (x.clone(), CurrencyId::KSM, 10_000_000_000_000_000),
+                    (x.clone(), CurrencyId::MAXIM, 10_000_000_000_000_000),
+                ]
+            })
+            .collect(),
+        }),
 	}
 }

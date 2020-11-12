@@ -38,27 +38,27 @@ https://github.com/maksim-tolo/hello-world-by-polkadot/tree/master/challenge-4
 
 **Challenge 7**
 
-[[BEGINNER CHALLENGE] Run A Kusama Or Polkadot Node And Add It To Telemetry](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
-
-https://github.com/maksim-tolo/hello-world-by-polkadot/blob/master/challenge-8/result.png
-
-**Challenge 8**
-
 [[BEGINNER CHALLENGES] Front-End Javascript](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/14/100023940)
 
 https://github.com/maksim-tolo/hello-world-by-polkadot/tree/master/challenge-5
 
-**Challenge 9**
+**Challenge 8**
 
 [[ECOSYSTEM CHALLENGE] Using Remix And MetaMask On Moonbeam](https://gitcoin.co/issue/PureStake/gitcoin-hello-world-by-moonbeam/3/100023962)
 
 https://github.com/maksim-tolo/hello-world-by-polkadot/blob/master/challenge-6/result.md
 
-**Challenge 10**
+**Challenge 9**
 
 [[ECOSYSTEM CHALLENGE] Deploy On Moonbase Alpha Using Truffle](https://gitcoin.co/issue/PureStake/gitcoin-hello-world-by-moonbeam/1/100023953)
 
 https://github.com/maksim-tolo/hello-world-by-polkadot/blob/master/challenge-7/result.md
+
+**Challenge 10**
+
+[[BEGINNER CHALLENGE] Run A Kusama Or Polkadot Node And Add It To Telemetry](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/12/100023938)
+
+https://github.com/maksim-tolo/hello-world-by-polkadot/blob/master/challenge-8/result.png
 
 **Challenge 11**
 
@@ -101,3 +101,9 @@ https://github.com/maksim-tolo/hello-world-by-polkadot/tree/master/challenge-14
 [[INTERMEDIATE CHALLENGE] FRAME Identity: Set An Identity On A Local --Dev Chain](https://gitcoin.co/issue/Polkadot-Network/hello-world-by-polkadot/10/100023936)
 
 https://github.com/maksim-tolo/hello-world-by-polkadot/blob/master/challenge-15/result.png
+
+**Challenge 18**
+
+[[ECOSYSTEM CHALLENGE] (Beginner) Build And Run A Local Phala Network](https://gitcoin.co/issue/Phala-Network/hello-world-by-polkadot/1/100023945)
+
+https://github.com/maksim-tolo/hello-world-by-polkadot/tree/master/challenge-16
